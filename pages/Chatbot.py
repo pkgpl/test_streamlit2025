@@ -419,7 +419,7 @@ def show_message(msg):
 client = st.session_state.get('openai_client', None)
 if client is None:
     if st.button("API Key를 입력하세요."):
-        st.switch_page("pages/1_Setting.py")
+        st.switch_page("streamlit_app.py")
     st.stop()
 
 if "chatbot_messages" not in st.session_state:
