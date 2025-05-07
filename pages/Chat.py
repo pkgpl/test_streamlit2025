@@ -13,6 +13,8 @@ def get_response(prompt):
     )
     return response.output_text
 
+if st.button("Clear"):
+    del st.session_state["messages"]
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
