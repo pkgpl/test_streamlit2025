@@ -16,7 +16,7 @@ api_key= st.text_input("OpenAI API Key", type="password")
 if api_key:
     st.session_state["OPENAI_API_KEY"] = api_key
     client = OpenAI(api_key=api_key)
-    st.session_state["client"] = client
+    st.session_state["openai_client"] = client
 else:
     st.markdown("API KEY를 입력하세요.")
     #st.stop()
