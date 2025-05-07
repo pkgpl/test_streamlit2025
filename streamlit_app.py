@@ -19,7 +19,7 @@ if api_key:
     st.session_state["client"] = client
 else:
     st.markdown("API KEY를 입력하세요.")
-    st.stop()
+    #st.stop()
 
 prompt = st.text_area("User prompt")
 
