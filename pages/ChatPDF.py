@@ -17,8 +17,8 @@ if client is None:
 
 pdf_file = st.file_uploader("Upload a pdf file", type=['pdf'], accept_multiple_files=False)
 if pdf_file is not None:
-    vector_store = client.beta.vector_stores.create(name="ChatPDF")
-    file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+    vector_store = client.vector_stores.create(name="ChatPDF")
+    file_batch = client.vector_stores.file_batches.upload_and_poll(
         vector_store_id=vector_store.id,
         files=[pdf_file]
     )
@@ -62,7 +62,7 @@ with col2:
         st.session_state.chatpdf_messages = []
         del st.session_state.chatpdf_thread
         del st.session_state.chatpdf_assistant
-        client.beta.vector_stores.delete(st.session_state.vector_store.id)
+        client.vector_stores.delete(st.session_state.vector_store.id)
         del st.session_state.vector_store
 
 # previous chat
