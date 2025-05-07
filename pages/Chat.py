@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-if "messages" not int st.session_state:
+if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
 for msg in st.session_state["messages"]:
@@ -19,4 +19,3 @@ if prompt := st.chat_input("What is up?"):
         st.markdown(response)
 
     st.session_state.messages.append({"role":"assistant", "content":response})
-    
